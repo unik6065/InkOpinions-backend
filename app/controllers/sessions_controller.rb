@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :authorized, only: [:auto_login]
+  skip_before_action :authorized, only: [:create]
 
   # LOGGING IN
   def create
@@ -9,17 +9,11 @@ class SessionsController < ApplicationController
       token = encode_token({ user_id: @user.id })
       render json: { user: @user, token: }
     else
-      render json: { error: 'Invalid username or password' }
+      render json: { error: 'Invalid username or password' }, status: :unauthorized
     end
   end
 
   def auto_login
     render json: @user
-  end
-
-  private
-
-  def user_params
-    params.permit(:username, :password, :age)
   end
 end

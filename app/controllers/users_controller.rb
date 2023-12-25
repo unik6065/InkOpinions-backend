@@ -9,4 +9,10 @@ class UsersController < ApplicationController
       render json: { error: 'Can not Create the User' }
     end
   end
+
+  private
+
+  def user_params
+    params.permit(:username, :password, :age, :email)
+  end
 end

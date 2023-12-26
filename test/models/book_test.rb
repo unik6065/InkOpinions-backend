@@ -18,4 +18,8 @@ class BookTest < ActiveSupport::TestCase
   test 'should create a book if everything is fulfilled' do
     assert @book.valid?
   end
+
+  test 'a book should have many book reviews' do
+    assert_equal 1, books(:lotr).book_reviews.count
+  end
 end

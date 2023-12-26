@@ -24,4 +24,8 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(email: 'test@gmail.com', age: 20, username: 'test')
     assert_not user.save
   end
+
+  test 'a user should have many book reviews' do
+    assert_equal 1, users(:test_user).book_reviews.count
+  end
 end

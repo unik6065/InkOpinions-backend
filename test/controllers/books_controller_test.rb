@@ -56,4 +56,12 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     delete "/book/#{books(:lotr).id}"
     assert_response :unauthorized
   end
+
+  test 'should get all the reviews of a book' do
+    get "/book/#{books(:lotr).id}/reviews"
+    assert_response :success
+    assert_equal @response.body.include?('reviews'), true
+    assert_equal @response.body['reviews'].length.positive?, true
+    assert_equal books(:lotr).book_reviews[0]['review'], JSON.parse(@response.body)['reviews'][0]['review']
+  end
 end

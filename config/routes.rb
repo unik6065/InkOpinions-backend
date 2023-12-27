@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
   resource :user, only: [:create]
   resources :book, only: %i[create update destroy show index], controller: 'books'
+
   resources :book_review, only: %i[create update destroy], controller: 'book_reviews'
+  get 'book/:id/reviews' => 'books#book_reviews'
 
   post 'login' => 'sessions#create'
   get 'auto_login' => 'sessions#auto_login'

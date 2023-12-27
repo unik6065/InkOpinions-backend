@@ -8,5 +8,5 @@ lotr:
   name: "lord of the ring"
   description: "lorem ipsum"
   weight: 12
-  id: 1
+  id: 1 
 # column: value

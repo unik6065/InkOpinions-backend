@@ -5,3 +5,10 @@ test_user:
   password_digest: <%= BCrypt::Password.create('test') %>
   age: 3
   email: "test@gmail.com"
+
+test_user2:
+  id: 2
+  username: "test2"
+  password_digest: <%= BCrypt::Password.create('test2') %>
+  age: 4
+  email: "test2@gmail.com"

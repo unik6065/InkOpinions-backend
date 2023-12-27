@@ -9,3 +9,9 @@ one:
   book_id: 1
   grade: 1
   user_id: 1
+
+two:
+  review: "lorem ipsum"
+  book_id: 2
+  grade: 2
+  user_id: 2

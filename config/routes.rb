@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resource :user, only: [:create]
   # get 'book' => 'books#index'
   resources :book, only: %i[create update destroy show index], controller: 'books'
+  resources :book_review, only: %i[create update destroy show], controller: 'book_reviews'
 
   post 'login' => 'sessions#create'
   get 'auto_login' => 'sessions#auto_login'

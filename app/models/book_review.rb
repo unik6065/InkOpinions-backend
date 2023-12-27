@@ -1,6 +1,6 @@
 class BookReview < ApplicationRecord
-  has_one :user
-  has_one :book
+  belongs_to :user
+  belongs_to :book
 
   validates :grade, presence: true
   validates :grade, numericality: { greater_than: 0, less_than: 6 }

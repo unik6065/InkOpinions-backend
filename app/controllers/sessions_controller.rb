@@ -3,17 +3,17 @@ class SessionsController < ApplicationController
 
   # LOGGING IN
   def create
-    @user = User.find_by(username: params[:username])
+    @current_user = User.find_by(username: params[:username])
 
-    if @user && @user.authenticate(params[:password])
-      token = encode_token({ user_id: @user.id })
-      render json: { user: @user, token: }
+    if @current_user && @current_user.authenticate(params[:password])
+      token = encode_token({ user_id: @current_user.id })
+      render json: { user: @current_user, token: }
     else
       render json: { error: 'Invalid username or password' }, status: :unauthorized
     end
   end
 
   def auto_login
-    render json: @user
+    render json: @current_user
   end
 end

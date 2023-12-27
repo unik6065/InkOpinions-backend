@@ -5,13 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  review: "lorem ipsum"
+  review: "this is a test"
   book_id: 1
   grade: 1
   user_id: 1
 
 two:
-  review: "lorem ipsum"
+  review: "this is another test"
   book_id: 2
   grade: 2
   user_id: 2

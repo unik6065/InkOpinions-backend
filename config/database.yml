@@ -81,5 +81,5 @@ production:
   <<: *default
   database: ink_opinions_production
   username: Rails.application.credentials[:database][:login]
-  url: Rails.application.credentials[:database][:url]
+  # url: Rails.application.credentials[:database][:url]
   password: Rails.application.credentials[:database][:password]
